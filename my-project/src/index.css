@@ -1,0 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link{
+    @apply relative 
+}
+.nav-link::after{
+    @apply content-[''] bg-blue-600 h-[3px] w-[0%] left-0 -bottom-[3px] rounded-xl absolute duration-500
+}
+.nav-link:hover::after{
+    @apply w-[110%]
+}
