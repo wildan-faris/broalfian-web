@@ -8,6 +8,8 @@ export default {
     extend:{
       fontFamily: {
         inter: ["Inter", "sans-serif"],
+        caveat: ["Caveat", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"],
       }
     }
    
