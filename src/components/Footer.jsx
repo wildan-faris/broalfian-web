@@ -1,23 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
         <div className=" border-t-[1px] border-t-slate-600">
-            <div className="flex flex-col py-10 gap-10 px-4">
+            <div className="flex flex-col py-10 gap-10 ">
                 <div className=" flex flex-col md:flex-row justify-between gap-2">
                     <div>
                         <p className=" text-3xl font-bold">PFOLIO.</p>
                     </div>
-                    <div className="md:space-x-10 font-inter font-medium flex flex-col md:flex-row gap-1">
-                        <a href="">Home</a>
-                        <a href="">About us</a>
-                        <a href="">Contact</a>
+                    <div className="md:space-x-10 font-inter text-sm md:text-base md:font-medium flex flex-col md:flex-row gap-1">
+                        <Link to="/">Home</Link>
+                        <Link to="/about">About us</Link>
+                        <Link to="/blog">Blog</Link>
                     </div>
                 </div>
                 <div className="flex flex-col md:flex-row md:justify-between gap-4 ">
                     <div className="md:order-1 order-2">
                         
-                    <p className="font-inter">
+                    <p className="font-inter text-sm md:text-base">
                         &copy; Designed by Alfian Ramadani
                     </p>
                     </div>
