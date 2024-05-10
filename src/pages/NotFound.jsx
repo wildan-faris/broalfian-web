@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer';
 import NotFoundImg from '../assets/img/notFound.jpg'
 import {Link} from 'react-router-dom'
