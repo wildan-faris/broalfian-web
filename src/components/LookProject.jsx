@@ -23,7 +23,7 @@ const imgTemplateArray = [
     }
 ];
 
-const LookProject = () => {
+const LookProject = (props) => {
     return (
         <>
 
@@ -33,10 +33,10 @@ const LookProject = () => {
                         <p className=" text-slate-300 text-justify text-xs tracking-wide">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit quaerat minima natus suscipit laborum unde. Magnam cum dolorem officia, quas debitis unde dignissimos iure eveniet corporis eius amet natus beatae.</p>
                     </div>
                 <div className="grid md:grid-cols-2 gap-4">
-                    {imgTemplateArray.map((item, index) => (
-                        <div className="p-4 hover:scale-[1.02] duration-300  ">
+                {props.data.map((item, index) => (
+                        <div className="p-4 hover:scale-[1.02] duration-300  " key={index}>
                             <div className="">
-                                <img className=" md:w-full md:h-72 rounded-t-2xl" src={item.imgPath} alt="" />
+                                <img className=" md:w-full md:h-72 rounded-t-2xl" src={imgtemplateproject}  alt="" />
 
                             </div>
                             <div className="py-6 px-6 space-y-1 bg-[#1C1C22] rounded-b-2xl">
