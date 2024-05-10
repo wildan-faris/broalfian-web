@@ -1,43 +1,25 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import LookProject from "./components/LookProject";
-import Infomation from "./components/Information";
-import Footer from "./components/Footer";
-
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Home from './pages/Home'
+import Post from './pages/Blog'
+import Projects from './pages/Projects'
+import About from './pages/About'
+import NotFound from './pages/NotFound'
+import Contact from './pages/Contact'
 function App() {
   return (
-    <>
-      <section className="bg-[#161513] text-white ">
-        <div className="container mx-auto">
-          <div className=" h-screen flex flex-col">
-            <Navbar />
-            <Hero />
-          </div>
-        </div>
-      </section>
-      <section className="bg-[#161513]  text-white ">
-        <div className="container mx-auto ">
-
-        <LookProject />
-        </div>
-      </section>
-      <section className="bg-[#1C1C22] text-white ">
-        <div className="container mx-auto ">
-        <Infomation />
-
-        </div>
-     
-      </section>
-      <section className="bg-[#1C1C22] text-white ">
-        <div className="container mx-auto ">
-        <Footer />
-
-        </div>
-     
-      </section>
+   <Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/projects" element={<Projects />} />
+      <Route path="/blog" element={<Post />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<NotFound />} />
+      
 
 
-    </>
+    </Routes>
+   </Router>
   );
 }
 
