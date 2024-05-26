@@ -45,7 +45,7 @@ const Post = () => {
       <div className="bg-[#161513] text-white">
         <div className="container mx-auto px-7 py-32">
           <div className="flex flex-row gap-20 ">
-            <div className="  flex flex-col basis-9/12 ">
+            <div className="  flex flex-col md:basis-9/12 ">
               <div className="flex flex-col  gap-2 md:gap-2">
                 <p className="text-xl font-semibold md:text-4xl md:font-semibold font-ubuntu leading-tight  md:w-11/12 tracking-wide">
                   {Data.title}
@@ -63,7 +63,7 @@ const Post = () => {
                   </p>
                 </div>
               </div>
-              <div className="w-full h-[35rem]  ">
+              <div className="w-full xl:h-[35rem]  ">
                 <img
                   src={Data.featured_image}
                   className="w-full h-full object-cover"
@@ -76,7 +76,7 @@ const Post = () => {
                 dangerouslySetInnerHTML={{ __html: Data.content }}
               ></section>
             </div>
-            <aside className="basis-3/12">
+            <aside className="hidden md:block md:basis-3/12">
               <div className="fixed ">
                 <p className="uppercase font-semibold mb-4">
                   Table Of Contents
