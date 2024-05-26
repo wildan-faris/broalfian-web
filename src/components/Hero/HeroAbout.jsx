@@ -11,31 +11,28 @@ function HeroAbout(props) {
         </span>
       </div>
       <div className="flex flex-col gap-5">
-        <p className="font-inter text-sm md:text-base text-gray-300 font-light md:w-7/12">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-          aliquam omnis, perspiciatis cumque eos perferendis quibusdam obcaecati
-          eveniet at. Porro illo inventore possimus magnam dolore cumque maxime
-          ea itaque obcaecati?
+        <p className="font-inter text-sm md:text-lg text-gray-300 font-light md:w-7/12">
+         {props.description}
         </p>
         <div className="flex flex-row gap-4">
           <a href="https://www.linkedin.com/in/alfian-ramadani-993716265/">
             <div className="hover:scale-[1.02] duration-300 rounded-full w-10 h-10 p-[1px] bg-gradient-to-r from-[#B16CEA] to-[#FF7B5D]">
               <div className="flex rounded-full h-full w-full items-center justify-center bg-gray-800 ">
-                <i class="fa-brands fa-linkedin-in"></i>
+                <i className="fa-brands fa-linkedin-in"></i>
               </div>
             </div>
           </a>
           <a href="https://www.instagram.com/_alfianramadani/">
             <div className=" hover:scale-[1.02] duration-300 rounded-full w-10 h-10 p-[1px] bg-gradient-to-r from-[#B16CEA] to-[#FF7B5D]">
               <div className="flex rounded-full h-full w-full items-center justify-center bg-gray-800 ">
-                <i class="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram"></i>
               </div>
             </div>
           </a>
           <a href="https://www.facebook.com/AlfianRamadani777">
             <div className=" hover:scale-[1.02] duration-300 rounded-full w-10 h-10 p-[1px] bg-gradient-to-r from-[#B16CEA] to-[#FF7B5D]">
               <div className="flex rounded-full h-full w-full items-center justify-center bg-gray-800 ">
-                <i class="fa-brands fa-facebook"></i>
+                <i className="fa-brands fa-facebook"></i>
               </div>
             </div>
           </a>

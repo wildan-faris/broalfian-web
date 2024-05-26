@@ -2,17 +2,20 @@ import * as React from "react";
 import HeroImg from "../../assets/hero-img.jpg";
 import { Link } from "react-router-dom";
 import AuthApi from "../../helper/AuthApi";
+import ExampleImg from "../../assets/img/examplePostImg.jpg";
+
+
 
 const Hero = (props) => {
   return (
-    <div className=" flex flex-col flex-grow space-y-3 md:space-y-4 items-center justify-center text-center">
+    <>
       <img
-        src={HeroImg}
         className=" w-32 h-32 md:w-48 md:h-48 bg-white rounded-full"
         alt="Hero-profile-img"
+        src={ExampleImg}
       />
       <div className="w-10/12 md:w-6/12 ">
-        <h1 className=" text-2xl font-semibold md:text-3xl md:font-bold">
+        <h1 className=" text-lg font-semibold md:text-3xl md:font-bold">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B16CEA] to-[#FF7B5D]">
             Hello, I'm {props.name},
           </span>{" "}
@@ -20,9 +23,8 @@ const Hero = (props) => {
         </h1>
       </div>
       <div className="w-10/12 md:w-5/12">
-        <p className=" text-sm">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-          incidunt, earum ut ratione iure minus!
+        <p className=" text-xs md:text-sm leading-snug tai">
+          {props.description}
         </p>
       </div>
       <div className="flex flex-col md:flex-row md:space-x-10 space-y-1 md:space-y-0 ">
@@ -39,7 +41,8 @@ const Hero = (props) => {
           VIEW ALL WORKS
         </Link>
       </div>
-    </div>
+    
+    </>
   );
 };
 
