@@ -4,7 +4,7 @@ import ExampleImg from '../assets/img/examplePostImg.jpg'
 
 function FollowMe(props) {
     return (
-        <div class="md:relative flex flex-col gap-5">
+        <div className="md:relative flex flex-col gap-5">
             <div>
 
                 <img className="md:min-w-[60%]" src={ExampleImg} alt="" />
