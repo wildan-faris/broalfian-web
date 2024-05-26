@@ -3,9 +3,12 @@ import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer';
 import NotFoundImg from '../assets/img/notFound.jpg'
 import {Link} from 'react-router-dom'
-
+import UseTitle from '../helper/useTitle';
 
 function NotFound() {
+    React.useEffect(() => {
+        UseTitle("Not Found")
+    }, []);
     return (
         <section className="bg-[#161513] text-white ">
             <div className="container mx-auto px-8 md:px-14 min-h-screen flex flex-col">
