@@ -1,43 +1,56 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import LookProject from "./components/LookProject";
-import Infomation from "./components/Information";
-import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Blog from "./pages/Blog";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
+import Contact from "./pages/Contact";
+import Dashboard from "./pages/Dashboard";
+import Post from "./pages/Post";
+import Editor from "./pages/Editor";
 
 function App() {
   return (
-    <>
-      <section className="bg-[#161513] text-white ">
-        <div className="container mx-auto">
-          <div className=" h-screen flex flex-col">
-            <Navbar />
-            <Hero />
-          </div>
-        </div>
-      </section>
-      <section className="bg-[#161513]  text-white ">
-        <div className="container mx-auto ">
-
-        <LookProject />
-        </div>
-      </section>
-      <section className="bg-[#1C1C22] text-white ">
-        <div className="container mx-auto ">
-        <Infomation />
-
-        </div>
-     
-      </section>
-      <section className="bg-[#1C1C22] text-white ">
-        <div className="container mx-auto ">
-        <Footer />
-
-        </div>
-     
-      </section>
-
-
-    </>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={<Home />}
+        />
+        <Route
+          path="/about"
+          element={<About />}
+        />
+        <Route
+          path="/projects"
+          element={<Projects />}
+        />
+        <Route
+          path="/blog/"
+          element={<Blog />}
+        />
+        <Route
+          path="/post/:id"
+          element={<Post />}
+        />
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
+        <Route
+          path="/dashboard"
+          element={<Dashboard />}
+        />
+        <Route
+          path="/editor"
+          element={<Editor />}
+        />
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
+      </Routes>
+    </Router>
   );
 }
 

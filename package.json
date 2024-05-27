@@ -10,9 +10,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "axios": "^1.6.8",
+    "daisyui": "^4.11.1",
+    "flowbite": "^2.3.0",
+    "flowbite-react": "^0.9.0",
+    "framer-motion": "^11.2.6",
+    "hamburger-react": "^2.5.1",
+    "quill-image-resize": "^3.0.9",
+    "quill-image-resize-module": "^3.0.0",
+    "quill-image-resize-module-react": "^3.0.0",
     "react": "^18.2.0",
+    "react-daisyui": "^5.0.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.23.0"
+    "react-quill": "^2.0.0",
+    "react-router-dom": "^6.23.0",
+    "react-router-hash-link": "^2.4.3",
+    "react-slugify": "^3.0.3",
+    "react-use": "^17.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
