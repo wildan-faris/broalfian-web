@@ -13,8 +13,8 @@ import imgtemplateproject from "../assets/img/examimg.jpg";
 
 function Home() {
   const [data, setData] = React.useState({
-    information: null,
-    projects: null,
+    information: '',
+    projects: '',
   });
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -26,7 +26,7 @@ function Home() {
       console.log(response);
         setData((prevState) => ({
           ...prevState,
-          information: response.data.data,
+          information: response.data.data[0],
         }));
       
     } catch (error) {
@@ -40,7 +40,6 @@ function Home() {
     fetchInformationData();
  
   }, []);
-
   return (
     <>
       <Navbar />
@@ -53,13 +52,28 @@ function Home() {
                   <SkeletonHero />
                 ) : (
                   <Hero
-                    name={data.information?.name}
-                    position={data.information?.position}
-                    country={data.information?.country}
-                    description={data.information?.description_1}
+                      name={data.information?.name}
+                      position={data.information?.position}
+                      country={data.information?.country}
+                      description={data.information?.description_1}
+                      img={ data.information?.avatar}
                   />
                 )}
               </div>
+            </div>
+          </section>
+
+          <section className="bg-[#1C1C22]">
+            <div className=" py-10 px-7 md:px-14">
+              <Information
+                name={data.information?.name}
+                position={data.information?.position}
+                done={data.information?.projects_done}
+                years={data.information?.experience}
+                satisfication={data.information?.satisfication}
+                description={data.information?.description_2}
+                subDescription={data.information?.description_3}
+              />
             </div>
           </section>
           <section id="projects">
@@ -72,19 +86,6 @@ function Home() {
                   img={imgtemplateproject}
                 />
               )}
-            </div>
-          </section>
-          <section className="bg-[#1C1C22]">
-            <div className=" py-10 px-7 md:px-14">
-              <Information
-                name={data.information?.name}
-                position={data.information?.position}
-                done={data.information?.projects_done}
-                years={data.information?.experience}
-                satisfication={data.information?.satisfication}
-                description={data.information?.description_2}
-                subDescription={data.information?.description_3}
-              />
             </div>
           </section>
           <section>
