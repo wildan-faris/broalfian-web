@@ -1,86 +1,66 @@
 import React from 'react';
-
 import { Accordion } from "flowbite-react";
+const AccordionQuestions = [
+  {
+    question: "Apa saja keahlian dan keterampilan Anda?",
+    answer:
+      "Saya memiliki keahlian dalam [sebutkan keahlian utama, misalnya pengembangan web, desain grafis, analisis data, dsb.]. Saya juga mahir menggunakan berbagai alat dan teknologi seperti [sebutkan alat/teknologi, misalnya HTML, CSS, JavaScript, Photoshop, Python, dsb.].",
+  },
+  {
+    question: "Proyek apa saja yang pernah Anda kerjakan?",
+    answer:
+      "Saya telah mengerjakan berbagai proyek, mulai dari [sebutkan jenis proyek, misalnya situs web e-commerce, aplikasi mobile, desain logo, dsb.]. Anda dapat melihat detail dan hasil dari beberapa proyek saya di halaman [tautan ke halaman proyek] di website ini.",
+  },
+  {
+    question: "Bagaimana cara menghubungi Anda untuk kolaborasi atau proyek?",
+    answer:
+      "Anda dapat menghubungi saya melalui formulir kontak di halaman [tautan ke halaman kontak] atau mengirim email langsung ke [alamat email Anda]. Saya akan merespons secepat mungkin untuk membahas kemungkinan kerja sama atau proyek.",
+  },
+  {
+    question: "Apakah Anda bersedia bekerja secara freelance atau full-time?",
+    answer:
+      "Saya terbuka untuk berbagai jenis kerja, baik itu freelance, kontrak, atau full-time, tergantung pada proyek dan kesempatan yang ditawarkan. Silakan hubungi saya untuk mendiskusikan detail lebih lanjut.",
+  },
+  {
+    question: "Di mana saya bisa menemukan portofolio lengkap Anda?",
+    answer:
+      "Anda dapat melihat portofolio lengkap saya di halaman [tautan ke halaman portofolio] di website ini. Di sana, saya menampilkan proyek-proyek terbaru saya beserta deskripsi dan hasil yang telah dicapai.",
+  },
+];
+
 
 function FAQ(props) {
   return (
     <>
       <div className="space-y-5 ">
         <div>
-
-          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-raleway font-bold tracking-wide leading-tight">Frequently Asked<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B16CEA] to-[#FF7B5D]"> Questions</span></h1>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-raleway font-bold tracking-wide leading-tight">
+            Frequently Asked
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B16CEA] to-[#FF7B5D]">
+             {" "} Questions
+            </span>
+          </h1>
         </div>
-
       </div>
       <div>
-        <Accordion collapseAll className="space-y-5 text-white">
-          <Accordion.Panel>
-          <Accordion.Title className="text-white font-raleway text-sm md:text-lg xl:text-xl font-bold">What is Flowbite?</Accordion.Title>
-            <Accordion.Content className="text-xs md:text-lg lg:text-xl">
-              <p className="mb-2 text-white ">
-                Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons,
-                dropdowns, modals, navbars, and more.
-              </p>
-              <p className="text-white ">
-                Check out this guide to learn how to&nbsp;
-                <a
-                  href="https://flowbite.com/docs/getting-started/introduction/"
-                  className="text-cyan-600 hover:underline dark:text-cyan-500"
-                >
-                  get started&nbsp;
-                </a>
-                and start developing websites even faster with components on top of Tailwind CSS.
-              </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-          <Accordion.Title className="text-white font-raleway text-sm md:text-lg xl:text-xl font-bold">What is Flowbite?</Accordion.Title>
-            <Accordion.Content className="text-xs md:text-lg lg:text-xl">
-              <p className="mb-2 text-white ">
-                Flowbite is first conceptualized and designed using the Figma software so everything you see in the library
-                has a design equivalent in our Figma file.
-              </p>
-              <p className="text-white ">
-                Check out the
-                <a href="https://flowbite.com/figma/" className="text-cyan-600 hover:underline dark:text-cyan-500">
-                  Figma design system
-                </a>
-                based on the utility classes from Tailwind CSS and components from Flowbite.
-              </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-          <Accordion.Title className="text-white font-raleway text-sm md:text-lg xl:text-xl font-bold">What is Flowbite?</Accordion.Title>
-            <Accordion.Content className="text-xs md:text-lg lg:text-xl">
-              <p className="mb-2 text-white ">
-                The main difference is that the core components from Flowbite are open source under the MIT license, whereas
-                Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone
-                components, whereas Tailwind UI offers sections of pages.
-              </p>
-              <p className="mb-2 text-white ">
-                However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no
-                technical reason stopping you from using the best of two worlds.
-              </p>
-              <p className="mb-2 text-white ">Learn more about these technologies:</p>
-              <ul className="list-disc pl-5 text-white ">
-                <li>
-                  <a href="https://flowbite.com/pro/" className="text-cyan-600 hover:underline dark:text-cyan-500">
-                    Flowbite Pro
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://tailwindui.com/"
-                    rel="nofollow"
-                    className="text-cyan-600 hover:underline dark:text-cyan-500"
-                  >
-                    Tailwind UI
-                  </a>
-                </li>
-              </ul>
-            </Accordion.Content>
-          </Accordion.Panel>
-        </Accordion>
+        {AccordionQuestions.map((item, index) => (
+          <Accordion
+            collapseAll
+            className="space-y-5 text-white border-0"
+          >   
+            <Accordion.Panel>
+              <Accordion.Title className="text-white font-raleway text-sm ">
+                {item.question}
+              </Accordion.Title>
+              <Accordion.Content className="text-xs md:text-lg lg:text-xl">
+                {
+                  item.answer
+              }
+              </Accordion.Content>
+            </Accordion.Panel>
+          </Accordion>
+        ))}
+      
       </div>
     </>
   );
