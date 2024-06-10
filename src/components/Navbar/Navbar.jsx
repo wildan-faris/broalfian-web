@@ -26,27 +26,27 @@ export default function Navbar() {
   } 
   return (
     <nav
-      className={`fixed top-0  w-full py-4 px-7 md:px-7  z-50 rounded-b-xl   ${
+      className={`fixed top-0  w-full py-4 px-7 md:px-14  z-50 ${
         scrolling ? "navbar-scroll" : "navbar-default"
       }`}
     >
       <div className="flex justify-between items-center max-w-screen-xl mx-auto">
         <div className="flex space-x-10 justify-center items-center">
           <div>
-            <a
+            <Link
               className="text-2xl md:text-3xl font-inter font-semibold"
-              href=""
+              to="/"
             >
               PFOLIO.
-            </a>
+            </Link>
           </div>
           <div className="menu space-x-10 text-slate-300 hidden md:block text-base md:text-sm">
-            <HashLink
+            <Link
               to="/"
               className="nav-link"
             >
               Home
-            </HashLink>
+            </Link>
             <HashLink
               smooth
               to="/#projects"
@@ -60,11 +60,17 @@ export default function Navbar() {
             >
               About
             </Link>
-            <Link
+            {/* <Link
               to="/blog"
               className="nav-link"
             >
               Blog
+            </Link> */}
+            <Link
+              to="/contact"
+              className="nav-link"
+            >
+              Contact
             </Link>
           </div>
         </div>
