@@ -36,7 +36,7 @@
     @apply relative 
 }
 .nav-link::after{
-    @apply content-[''] bg-blue-600 h-[3px] w-[0%] left-0 -bottom-[3px] rounded-xl absolute duration-500
+    @apply content-[''] bg-blue-600 h-[3px] w-[0%] left-0 -bottom-[3px] absolute duration-500
 }
 .nav-link:hover::after{
     @apply w-[110%]
@@ -52,15 +52,18 @@
 @layer components{
 
   .navbar-scroll{
-    @apply text-black bg-sky-100
+    @apply text-white;
+ background: rgba(255, 255, 255, 0.17);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.9px);
+-webkit-backdrop-filter: blur(8.9px);
   }
-  .navbar-scroll .menu{
-    @apply text-black
-  }
+
   .navbar-scroll .action > .btn-action{
     @apply text-white bg-black hover:bg-white hover:text-black border-black
   }
   .navbar-default{
     @apply text-white
   }
+
 }
