@@ -12,7 +12,7 @@ const Hero = (props) => {
       <img
         className=" w-32 h-32 md:w-48 md:h-48 bg-white rounded-full"
         alt="Hero-profile-img"
-        src={ExampleImg}
+        src={props.img||ExampleImg}
       />
       <div className="w-10/12 md:w-6/12 ">
         <h1 className=" text-lg font-semibold md:text-3xl md:font-bold">
