@@ -24,11 +24,11 @@ function About() {
       const response = await AuthApi.get("/information")
         setData((prevState) => ({
           ...prevState,
-          information: response.data.data,
+          information: response.data.data[0],
         }));
     
     } catch (error) {
-      console.log(error);
+     return error.response.data
     }
   };
   const fetchEducationData = async () => {
