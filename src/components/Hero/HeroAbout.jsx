@@ -38,7 +38,8 @@ function HeroAbout(props) {
           </a>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-2 max-h-[40%]">
+      <div className="grid grid-cols-3 gap-2 "
+      >
         <div className="row-span-2 ">
           <img
             className="h-full"
