@@ -5,6 +5,7 @@ import InformationContact from "../components/Information/InformationContact";
 import ContactForm from "../components/ContactForm";
 import FAQ from "../components/FAQ";
 import UseTitle from "../helper/useTitle";
+import ToggleBtn from "../components/Button/toggleBtn";
 
 
 function Contact() {
@@ -13,8 +14,9 @@ function Contact() {
       }, []);
   return (
     <>
+    
       <Navbar />
-      <div className=" bg-[#161513] text-white ">
+      <div className=" bg-background1 text-white ">
         <section className="container mx-auto">
           <div className="  px-7 md:px-14 py-24 space-y-8 xl:w-[40%]">
             <InformationContact />
@@ -26,7 +28,7 @@ function Contact() {
           </div>
         </section>
         <section className="container mx-auto">
-          <div className="px-7 md:px-14 py-20 md:py-28 lg:py-40  xl:[&>*:nth-child(1)]:w-[40%] space-y-10">
+          <div className="px-7 md:px-14 py-20 md:py-28 lg:py-40   space-y-10">
             <FAQ />
           </div>
         </section>
