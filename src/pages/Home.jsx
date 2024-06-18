@@ -8,8 +8,9 @@ import AuthApi from "../helper/AuthApi";
 import UseTitle from "../helper/useTitle";
 import SkeletonHero from "../components/Skeleton/SkeletonHero";
 import SkeletonProject from "../components/Skeleton/SkeletonProject";
-
 import imgtemplateproject from "../assets/img/examimg.jpg";
+import ToggleBtn from "../components/Button/toggleBtn";
+import InfiniteStack from "../components/InfiniteStack";
 
 function Home() {
   const [data, setData] = React.useState({
@@ -43,7 +44,7 @@ function Home() {
   return (
     <>
       <Navbar />
-      <div className=" bg-[#161513] text-white ">
+      <div className=" bg-background1  ">
         <div className=" container mx-auto">
           <section className="">
             <div className=" h-screen flex flex-col">
@@ -52,18 +53,20 @@ function Home() {
                   <SkeletonHero />
                 ) : (
                   <Hero
-                      name={data.information?.name}
-                      position={data.information?.position}
-                      country={data.information?.country}
-                      description={data.information?.description_1}
-                      img={ data.information?.avatar}
+                    name={data.information?.name}
+                    position={data.information?.position}
+                    country={data.information?.country}
+                    description={data.information?.description_1}
+                    img={data.information?.avatar}
                   />
                 )}
               </div>
             </div>
           </section>
-
-          <section className="bg-[#1C1C22]">
+          <section>
+            <InfiniteStack />
+          </section>
+          <section className="bg-background2">
             <div className=" py-10 px-7 md:px-14">
               <Information
                 name={data.information?.name}
@@ -76,7 +79,11 @@ function Home() {
               />
             </div>
           </section>
-          <section id="projects">
+
+          <section
+            className="bg-background1"
+            id="projects"
+          >
             <div className=" py-10 px-7 md:px-14 -z-10">
               {isLoading ? (
                 <SkeletonProject />
@@ -88,8 +95,8 @@ function Home() {
               )}
             </div>
           </section>
-          <section>
-            <div className="px-7 md:px-14">
+          <section className="container mx-auto">
+            <div className=" px-7 md:px-14 ">
               <Footer />
             </div>
           </section>
