@@ -5,14 +5,14 @@ function HeroAbout(props) {
   return (
     <div className="flex flex-col gap-4 md:gap-8">
       <div className="text-xl md:text-5xl font-bold font-raleway leading-tight">
-        <h1 className="">Hi, I am </h1>
+        <h1 className="text-primary">Hi, I am </h1>
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B16CEA] to-[#FF7B5D]">
           {props.name}
         </span>
       </div>
       <div className="flex flex-col gap-5">
-        <p className="font-inter text-sm md:text-lg text-gray-300 font-light md:w-7/12">
-         {props.description}
+        <p className="font-inter text-sm md:text-lg text-primary font-light md:w-7/12">
+          {props.description}
         </p>
         <div className="flex flex-row gap-4">
           <a href="https://www.linkedin.com/in/alfian-ramadani-993716265/">
@@ -38,30 +38,31 @@ function HeroAbout(props) {
           </a>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-2 "
-      >
+      <div className="grid grid-cols-3 gap-2 ">
         <div className="row-span-2 ">
           <img
-            className="h-full"
+            className="hidden md:h-[30rem]"
             src={ExampleImg}
             alt=""
           />
         </div>
         <div className="row-span-2">
           <img
-            className="h-full"
+            className="hidden md:h-[30rem]"
             src={ExampleImg}
             alt=""
           />
         </div>
         <div>
           <img
+            className="hidden md:h-[14.75rem]"
             src={ExampleImg}
             alt=""
           />
         </div>
         <div>
           <img
+            className="hidden md:h-[14.75rem]"
             src={ExampleImg}
             alt=""
           />
@@ -74,7 +75,7 @@ function HeroAbout(props) {
               {props.experience}+
             </span>
           </h2>
-          <p className="w-40 tracking-wider">
+          <p className="w-40 tracking-wider text-primary">
             Years of Experience in Programming
           </p>
         </div>
@@ -84,7 +85,9 @@ function HeroAbout(props) {
               {props.projects}
             </span>
           </h2>
-          <p className="w-40 tracking-wider">Successfully Projects Completed</p>
+          <p className="w-40 tracking-wider text-primary">
+            Successfully Projects Completed
+          </p>
         </div>
         <div className="flex flex-col items-center justify-center flex-1 text-center gap-1 py-5 md:py-0">
           <h2 className="text-lg md:text-2xl lg:text-5xl font-bold font-raleway">
@@ -92,7 +95,9 @@ function HeroAbout(props) {
               40
             </span>
           </h2>
-          <p className="w-40 tracking-wider">Lorem, ipsum dolor lorem</p>
+          <p className="w-40 tracking-wider text-primary">
+            Lorem, ipsum dolor lorem
+          </p>
         </div>
       </div>
     </div>
