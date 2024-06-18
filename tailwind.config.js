@@ -9,13 +9,23 @@ export default {
   ],
   theme: {
     extend: {
+       
+  animationPlayState: {
+    'paused': 'paused'
+  },
+
       animation: {
-        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        'infinite-scroll-left': 'scroll-left 25s linear infinite',
+        'infinite-scroll-right': 'scroll-right 25s linear infinite',
       },
       keyframes: {
-        'infinite-scroll': {
+        'scroll-left': {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-100%)' },
+        },
+        'scroll-right': {
+          from: { transform: 'translateX(-100%)' },
+          to: { transform: 'translateX(0)' },
         },
       },
       colors: {
@@ -23,6 +33,8 @@ export default {
         background2: 'var(--color-background2)',
         primary: 'var(--color-text-primary)',
         secondary: 'var(--color-text-secondary)',
+        card1: 'var(--color-card1)',
+        ring1: 'var(--color-ring1)'
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
