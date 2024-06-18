@@ -15,11 +15,11 @@ const InfiniteStack = () => {
         </p>
       </div>
       <div className="py-7">
-        <div className="inline-flex  flex-nowrap group relative overflow-hidden whitespace-nowrap [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
+        <div className="inline-flex w-full  flex-nowrap group relative overflow-hidden whitespace-nowrap [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
             <StackRight Icons={Icons1} />
             <StackRight Icons={Icons1} />
         </div>
-        <div className="inline-flex  flex-nowrap group relative overflow-hidden whitespace-nowrap [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
+        <div className="inline-flex w-full flex-nowrap group relative overflow-hidden whitespace-nowrap [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
             <StackLeft Icons={Icons2} />
             <StackLeft Icons={Icons2} />
         </div>
