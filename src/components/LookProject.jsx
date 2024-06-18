@@ -27,14 +27,14 @@ const LookProject = (props) => {
     return (
       <>
         <div className="mb-10 md:w-7/12 space-y-2 ">
-          <h1 className="font-inter text-2xl md:text-4xl font-bold w-8/12 leading-tight tracking-wider">
-            Look at My{" "}
+          <h1 className="font-inter text-2xl md:text-4xl font-bold w-8/12 leading-tight tracking-wider text-primary">
+            Look at My{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B16CEA] to-[#FF7B5D]">
               Projects.
             </span>
           </h1>
 
-          <p className=" text-slate-300 text-justify text-xs tracking-wide">
+          <p className=" text-secondary text-justify text-xs tracking-wide ">
             Welcome to my project portfolio! As a FullStack Developer, I take
             pride in creating efficient and visually appealing web applications.
             Below, you can explore a variety of projects that highlight my
