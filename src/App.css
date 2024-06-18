@@ -1,0 +1,31 @@
+.hand{
+    cursor: pointer;
+    display: inline-block;
+    animation: handwaves 2s infinite ;
+  
+    
+}
+
+@keyframes handwaves{
+    0% {
+        transform: translate(10px, -5px);
+        rotate: 10deg;
+    }
+    50% {
+        transform: translate(0);
+        rotate: -10deg;
+    }
+    100% {
+        transform: translate(10px, -5px);
+        rotate: 10deg;
+    }
+}
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
