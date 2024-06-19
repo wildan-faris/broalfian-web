@@ -16,14 +16,14 @@ function Status(props) {
               className="py-5"
             >
               <div className="flex flex-col gap-1">
-                <h2 className="text-xl md:text-3xl font-semibold font-raleway">
+                <h2 className="text-xl md:text-3xl font-semibold font-raleway text-primary">
                   {item.school}
                 </h2>
                 <div className="flex flex-col md:flex-row  md:justify-between md:pe-11">
-                  <p className="font-raleway text-sm tracking-wide text-gray-400 font-medium">
+                  <p className="font-raleway text-sm tracking-wide text-secondary font-medium">
                     {item.major}
                   </p>
-                  <p className="font-raleway text-sm tracking-wide text-gray-400 font-medium">
+                  <p className="font-raleway text-sm tracking-wide text-secondary font-medium">
                     - {item.period}
                   </p>
                 </div>
@@ -44,14 +44,14 @@ function Status(props) {
 
           <li className="py-5" key={index} >
             <div className="flex flex-col gap-1">
-              <h2 className="text-xl md:text-3xl font-semibold font-raleway">
+              <h2 className="text-xl md:text-3xl font-semibold text-primary font-raleway">
                 {item.work}
               </h2>
               <div className="flex flex-col md:flex-row  md:justify-between md:pe-11">
-                <p className="font-raleway text-sm tracking-wide text-gray-400 font-medium">
+                <p className="font-raleway text-sm tracking-wide text-secondary font-medium">
                   {item.division}
                 </p>
-                <p className="font-raleway text-sm tracking-wide text-gray-400 font-medium">
+                <p className="font-raleway text-sm tracking-wide text-secondary font-medium">
                   - {item.period}
                 </p>
               </div>

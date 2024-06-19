@@ -1,52 +1,49 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-import NavbarMobile from "./NavbarMobile";
-
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import NavbarMobile from './NavbarMobile';
 
 export default function Navbar() {
-
-
-
   const navigate = useNavigate();
   const [scrolling, setScrolling] = React.useState(false);
+
   React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
-  const  handleScroll = () => {
-    if (window.scrollY > 40   ) {
-      setScrolling(true);
-    } else {
-      setScrolling(false);
 
-    }
-  } 
   return (
     <nav
-      className={`fixed top-0  w-full py-4 px-7 md:px-7  z-50 rounded-b-xl   ${
-        scrolling ? "navbar-scroll" : "navbar-default"
+      className={`fixed top-0 w-full py-4 px-7 md:px-14 z-50 ${
+        scrolling ? 'navbar-scroll' : ''
       }`}
     >
-      <div className="flex justify-between items-center max-w-screen-xl mx-auto">
+      <div className="flex justify-between items-center max-w-screen-xl mx-auto ">
         <div className="flex space-x-10 justify-center items-center">
           <div>
-            <a
-              className="text-2xl md:text-3xl font-inter font-semibold"
-              href=""
+            <Link
+              className="text-2xl md:text-3xl font-inter font-semibold text-primary"
+              to="/"
             >
               PFOLIO.
-            </a>
+            </Link>
           </div>
-          <div className="menu space-x-10 text-slate-300 hidden md:block text-base md:text-sm">
-            <HashLink
+          <div className="menu space-x-10 text-secondary hidden md:block text-base md:text-sm">
+            <Link
               to="/"
               className="nav-link"
             >
               Home
-            </HashLink>
+            </Link>
             <HashLink
               smooth
               to="/#projects"
@@ -61,22 +58,21 @@ export default function Navbar() {
               About
             </Link>
             <Link
-              to="/blog"
+              to="/contact"
               className="nav-link"
             >
-              Blog
+              Contact
             </Link>
           </div>
         </div>
-        <div className="action hidden md:flex justify-center items-center">
+        <div className="action hidden md:flex justify-center items-center gap-4">
           <Link
-            className="btn-action text-xs md:text-base bg-white border-0 px-6 py-2 md:px-6 md:py-2 rounded-full text-black font-bold hover:bg-black hover:text-white border-b-[1px] text-center"
+            className="btn-action text-xs md:text-base bg-text-primary border-primary border-0 px-6 py-2 md:px-6 md:py-2 rounded-full text-primary font-bold hover:bg-primary hover:text-background1 border-b-[1px] text-center"
             to="/contact"
           >
             LET'S TALK
           </Link>
         </div>
-        {/* Mobile */}
         <NavbarMobile />
       </div>
     </nav>

@@ -1,88 +1,99 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Accordion } from "flowbite-react";
-
-function FAQ(props) {
+// Accordion Item Component
+function AccordionItem({ question, answer, isOpen, onClick }) {
   return (
-    <>
-      <div className="space-y-5 ">
-        <div>
-
-          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-raleway font-bold tracking-wide leading-tight">Frequently Asked<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B16CEA] to-[#FF7B5D]"> Questions</span></h1>
+    <div className="border-b border-gray-200 dark:border-gray-700 w-full">
+      <h2>
+        <button
+          type="button"
+          className="flex items-center justify-between w-full py-5 font-medium text-left text-primary text-lg"
+          onClick={onClick}
+        >
+          <span className="">{question}</span>
+          <svg
+            className={`w-3 h-3 ${isOpen ? 'rotate-180' : ''} shrink-0`}
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9 5 5 1 1 5"
+            />
+          </svg>
+        </button>
+      </h2>
+      {isOpen && (
+        <div className="py-2 text-gray-500 dark:text-gray-400">
+          <p className="text-secondary">{answer}</p>
         </div>
+      )}
+    </div>
+  );
+}
 
-      </div>
+// FAQ Component
+function FAQ() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const AccordionQuestions = [
+    {
+      question: 'Apa saja keahlian dan keterampilan Anda?',
+      answer:
+        'Saya memiliki keahlian dalam [sebutkan keahlian utama, misalnya pengembangan web, desain grafis, analisis data, dsb.]. Saya juga mahir menggunakan berbagai alat dan teknologi seperti [sebutkan alat/teknologi, misalnya HTML, CSS, JavaScript, Photoshop, Python, dsb.].',
+    },
+    {
+      question: 'Proyek apa saja yang pernah Anda kerjakan?',
+      answer:
+        'Saya telah mengerjakan berbagai proyek, mulai dari [sebutkan jenis proyek, misalnya situs web e-commerce, aplikasi mobile, desain logo, dsb.]. Anda dapat melihat detail dan hasil dari beberapa proyek saya di halaman [tautan ke halaman proyek] di website ini.',
+    },
+    {
+      question: 'Bagaimana cara menghubungi Anda untuk kolaborasi atau proyek?',
+      answer:
+        'Anda dapat menghubungi saya melalui formulir kontak di halaman [tautan ke halaman kontak] atau mengirim email langsung ke [alamat email Anda]. Saya akan merespons secepat mungkin untuk membahas kemungkinan kerja sama atau proyek.',
+    },
+    {
+      question: 'Apakah Anda bersedia bekerja secara freelance atau full-time?',
+      answer:
+        'Saya terbuka untuk berbagai jenis kerja, baik itu freelance, kontrak, atau full-time, tergantung pada proyek dan kesempatan yang ditawarkan. Silakan hubungi saya untuk mendiskusikan detail lebih lanjut.',
+    },
+    {
+      question: 'Di mana saya bisa menemukan portofolio lengkap Anda?',
+      answer:
+        'Anda dapat melihat portofolio lengkap saya di halaman [tautan ke halaman portofolio] di website ini. Di sana, saya menampilkan proyek-proyek terbaru saya beserta deskripsi dan hasil yang telah dicapai.',
+    },
+  ];
+
+  const handleClick = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <div className="space-y-5">
       <div>
-        <Accordion collapseAll className="space-y-5 text-white">
-          <Accordion.Panel>
-          <Accordion.Title className="text-white font-raleway text-sm md:text-lg xl:text-xl font-bold">What is Flowbite?</Accordion.Title>
-            <Accordion.Content className="text-xs md:text-lg lg:text-xl">
-              <p className="mb-2 text-white ">
-                Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons,
-                dropdowns, modals, navbars, and more.
-              </p>
-              <p className="text-white ">
-                Check out this guide to learn how to&nbsp;
-                <a
-                  href="https://flowbite.com/docs/getting-started/introduction/"
-                  className="text-cyan-600 hover:underline dark:text-cyan-500"
-                >
-                  get started&nbsp;
-                </a>
-                and start developing websites even faster with components on top of Tailwind CSS.
-              </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-          <Accordion.Title className="text-white font-raleway text-sm md:text-lg xl:text-xl font-bold">What is Flowbite?</Accordion.Title>
-            <Accordion.Content className="text-xs md:text-lg lg:text-xl">
-              <p className="mb-2 text-white ">
-                Flowbite is first conceptualized and designed using the Figma software so everything you see in the library
-                has a design equivalent in our Figma file.
-              </p>
-              <p className="text-white ">
-                Check out the
-                <a href="https://flowbite.com/figma/" className="text-cyan-600 hover:underline dark:text-cyan-500">
-                  Figma design system
-                </a>
-                based on the utility classes from Tailwind CSS and components from Flowbite.
-              </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-          <Accordion.Title className="text-white font-raleway text-sm md:text-lg xl:text-xl font-bold">What is Flowbite?</Accordion.Title>
-            <Accordion.Content className="text-xs md:text-lg lg:text-xl">
-              <p className="mb-2 text-white ">
-                The main difference is that the core components from Flowbite are open source under the MIT license, whereas
-                Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone
-                components, whereas Tailwind UI offers sections of pages.
-              </p>
-              <p className="mb-2 text-white ">
-                However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no
-                technical reason stopping you from using the best of two worlds.
-              </p>
-              <p className="mb-2 text-white ">Learn more about these technologies:</p>
-              <ul className="list-disc pl-5 text-white ">
-                <li>
-                  <a href="https://flowbite.com/pro/" className="text-cyan-600 hover:underline dark:text-cyan-500">
-                    Flowbite Pro
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://tailwindui.com/"
-                    rel="nofollow"
-                    className="text-cyan-600 hover:underline dark:text-cyan-500"
-                  >
-                    Tailwind UI
-                  </a>
-                </li>
-              </ul>
-            </Accordion.Content>
-          </Accordion.Panel>
-        </Accordion>
+        <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-raleway font-bold tracking-wide leading-tight text-primary">
+          Frequently Asked
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B16CEA] to-[#FF7B5D]">
+            {' '}
+            Questions
+          </span>
+        </h1>
       </div>
-    </>
+      {AccordionQuestions.map((item, index) => (
+        <AccordionItem
+          key={index}
+          question={item.question}
+          answer={item.answer}
+          isOpen={openIndex === index}
+          onClick={() => handleClick(index)}
+        />
+      ))}
+    </div>
   );
 }
 

@@ -24,11 +24,11 @@ function About() {
       const response = await AuthApi.get("/information")
         setData((prevState) => ({
           ...prevState,
-          information: response.data.data,
+          information: response.data.data[0],
         }));
     
     } catch (error) {
-      console.log(error);
+     return error.response.data
     }
   };
   const fetchEducationData = async () => {
@@ -46,7 +46,7 @@ function About() {
   const fetchJourneyData = async () => {
     try {
 
-     const response = await AuthApi.get("/journey")
+     const response = await AuthApi.get("/experience")
         setData((prevState) => ({
           ...prevState,
           journey: response.data.data,
@@ -58,7 +58,7 @@ function About() {
   return (
     <>
       <Navbar />
-      <div className="bg-[rgb(22,21,19)] text-white">
+      <div className="bg-background1 text-white">
         <section className="px-7 md:px-14 py-24 ">
           <div className="container mx-auto">
             <HeroAbout

@@ -8,13 +8,14 @@ import AuthApi from "../helper/AuthApi";
 import UseTitle from "../helper/useTitle";
 import SkeletonHero from "../components/Skeleton/SkeletonHero";
 import SkeletonProject from "../components/Skeleton/SkeletonProject";
-
 import imgtemplateproject from "../assets/img/examimg.jpg";
+import ToggleBtn from "../components/Button/toggleBtn";
+import InfiniteStack from "../components/InfiniteStack";
 
 function Home() {
   const [data, setData] = React.useState({
-    information: null,
-    projects: null,
+    information: '',
+    projects: '',
   });
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -26,7 +27,7 @@ function Home() {
       console.log(response);
         setData((prevState) => ({
           ...prevState,
-          information: response.data.data,
+          information: response.data.data[0],
         }));
       
     } catch (error) {
@@ -40,11 +41,10 @@ function Home() {
     fetchInformationData();
  
   }, []);
-
   return (
     <>
       <Navbar />
-      <div className=" bg-[#161513] text-white ">
+      <div className=" bg-background1  ">
         <div className=" container mx-auto">
           <section className="">
             <div className=" h-screen flex flex-col">
@@ -57,24 +57,16 @@ function Home() {
                     position={data.information?.position}
                     country={data.information?.country}
                     description={data.information?.description_1}
+                    img={data.information?.avatar}
                   />
                 )}
               </div>
             </div>
           </section>
-          <section id="projects">
-            <div className=" py-10 px-7 md:px-14 -z-10">
-              {isLoading ? (
-                <SkeletonProject />
-              ) : (
-                <LookProject
-                  info={data.projects?.data}
-                  img={imgtemplateproject}
-                />
-              )}
-            </div>
+          <section>
+            <InfiniteStack />
           </section>
-          <section className="bg-[#1C1C22]">
+          <section className="bg-background2">
             <div className=" py-10 px-7 md:px-14">
               <Information
                 name={data.information?.name}
@@ -87,8 +79,24 @@ function Home() {
               />
             </div>
           </section>
-          <section>
-            <div className="px-7 md:px-14">
+
+          <section
+            className="bg-background1"
+            id="projects"
+          >
+            <div className=" py-10 px-7 md:px-14 -z-10">
+              {isLoading ? (
+                <SkeletonProject />
+              ) : (
+                <LookProject
+                  info={data.projects?.data}
+                  img={imgtemplateproject}
+                />
+              )}
+            </div>
+          </section>
+          <section className="container mx-auto">
+            <div className=" px-7 md:px-14 ">
               <Footer />
             </div>
           </section>

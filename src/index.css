@@ -1,66 +1,92 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-@tailwind base;
 
-@layer base {
-  h1 {
-    @apply text-4xl;
-    @apply font-bold;
-  }
-  h2 {
-    @apply text-3xl;
-    @apply font-bold;
-  }
-  h3 {
-    @apply text-2xl;
-    @apply font-bold;
-  }
-  h4 {
-    @apply text-xl;
-    @apply font-semibold;
-  }
-  h5 {
-    @apply text-lg; /*or text-lg */
-    @apply font-semibold;
-  }
-  h6 {
-    @apply text-sm;
-    @apply font-semibold;
-  }
-}
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.nav-link{
-    @apply relative 
-}
-.nav-link::after{
-    @apply content-[''] bg-blue-600 h-[3px] w-[0%] left-0 -bottom-[3px] rounded-xl absolute duration-500
-}
-.nav-link:hover::after{
-    @apply w-[110%]
-}   
+@layer utilities {
 
-.hamburger{
-  @apply  flex flex-col gap-2  md:hidden
-}
-.hamburger:nth-of-type(1){
-  @apply  bg-slate-100 w-6 h-[0.01rem] hover:origin-top-left hover:rotate-[43deg]
+  .animation-pause {
+    animation-play-state: paused;
+  
+  }
 }
 
-@layer components{
+@layer base {
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  h2 {
+    @apply text-3xl font-bold;
+  }
+  h3 {
+    @apply text-2xl font-bold;
+  }
+  h4 {
+    @apply text-xl font-semibold;
+  }
+  h5 {
+    @apply text-lg font-semibold;
+  }
+  h6 {
+    @apply text-sm font-semibold;
+  }
+  :root {
+    --color-background1: rgb(246, 248, 253); /* #161513 */
+    --color-background2: rgb(246, 243, 253); /* #1C1C22 */
+    --color-text-primary: rgb(29, 26, 26);
+    --color-text-secondary: rgb(50, 50, 50);
+    --color-border-primary: rgb(29, 26, 26);
+    --color-card1 : rgb(255, 255, 255);
+    --color-ring1 : rgb(36, 71, 249);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background1: rgb(22, 21, 19); /* #161513 */
+      --color-background2: rgb(28, 28, 34); /* #1C1C22 */
+      --color-text-primary: rgb(250, 250, 250);
+      --color-text-secondary: rgb(209, 213, 219);
+          --color-card1 : rgb(09, 07, 02);
 
-  .navbar-scroll{
-    @apply text-black bg-sky-100
+          --color-ring1 : rgb(246, 248, 253);
+    }
   }
-  .navbar-scroll .menu{
-    @apply text-black
+  :root[data-theme="dark"] {
+    --color-background1: rgb(22, 21, 19); /* #161513 */
+    --color-background2: rgb(28, 28, 34); /* #1C1C22 */
+    --color-text-primary: rgb(250, 250, 250);
+    --color-text-secondary: rgb(209, 213, 219);
+          --color-card1 : rgb(09, 07, 02);
+
+              --color-ring1 : rgb(246, 248, 253);
+
   }
-  .navbar-scroll .action > .btn-action{
-    @apply text-white bg-black hover:bg-white hover:text-black border-black
+  * {
+    transition: all 0.2s ease;
   }
-  .navbar-default{
-    @apply text-white
+}
+
+.nav-link {
+  @apply relative;
+}
+.nav-link::after {
+  @apply content-[''] bg-blue-600 h-[3px] w-[0%] left-0 -bottom-[3px] absolute duration-500;
+}
+.nav-link:hover::after {
+  @apply w-[110%];
+}
+@layer components {
+  
+
+  .navbar-scroll {
+    background: rgba(145, 150, 184, 0.41);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+  }
+
+  .hamburger-react {
+    @apply text-primary
   }
 }

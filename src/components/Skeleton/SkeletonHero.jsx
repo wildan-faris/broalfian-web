@@ -3,8 +3,9 @@ import React from 'react';
 const SkeletonHero = () => {
     return (
       <>
+       
         <div
-          className="skeleton w-32 h-32 md:w-48 md:h-48  rounded-full "
+          className="skeleton w-32 h-32 md:w-48 md:h-48  rounded-full  "
           alt="Hero-profile-img"
         ></div>
         <div className="skeleton h-14 w-6/12 rounded-full"></div>
