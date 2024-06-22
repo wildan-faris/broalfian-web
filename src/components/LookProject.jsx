@@ -43,7 +43,7 @@ const LookProject = (props) => {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-4">
-          {props?.projects.slice(0,4).map((item, index) => (
+          {props.projects?.slice(0,4).map((item, index) => (
             <div
               key={index}
               className="card bg-base-100 shadow-xl image-full transition duration-300 hover:scale-[1.01] "
