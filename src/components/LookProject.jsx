@@ -1,28 +1,7 @@
 import React from 'react';
 import imgtemplateproject from '../assets/img/examimg.jpg';
 import { Link } from 'react-router-dom';
-const imgTemplateArray = [
-    {
-        imgPath: imgtemplateproject,
-        title: "Finance Landing Page",
-        subtitle: "Landing Page UI Kit",
-    },
-    {
-        imgPath: imgtemplateproject,
-        title: "Interiour Design Website",
-        subtitle: "Dribble Shot",
-    },
-    {
-        imgPath: imgtemplateproject,
-        title: "Russell Morgan Portofolio",
-        subtitle: "Dribble Shot",
-    },
-    {
-        imgPath: imgtemplateproject,
-        title: "Sonali Landing Page",
-        subtitle: "Landing Page UI Kit",
-    }
-];
+
 
 const LookProject = (props) => {
     return (
@@ -43,7 +22,7 @@ const LookProject = (props) => {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-4">
-          {props?.projects.slice(0,4).map((item, index) => (
+          {props.projects?.slice(0,4).map((item, index) => (
             <div
               key={index}
               className="card bg-base-100 shadow-xl image-full transition duration-300 hover:scale-[1.01] "
