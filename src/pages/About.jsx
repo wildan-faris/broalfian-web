@@ -70,7 +70,7 @@ function About() {
           </div>
         </section>
         <section>
-          <div className="px-7 md:px-14 py-14 md:py-20">
+          <div className="px-7 md:px-14  md:py-20">
             <Status
               educationData={data?.education}
               journeyData={data?.journey}
