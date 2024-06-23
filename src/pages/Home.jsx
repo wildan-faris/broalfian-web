@@ -31,27 +31,25 @@ function Home() {
   }
  
   const fetchInformationData = async () => {
-  
-      const response = await AuthApi.get(
-        "/information"
-      );
+      try {
+        const response = await AuthApi.get('/information');
         setData((prevState) => ({
           ...prevState,
           information: response.data.data[0],
         }));
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+      }
     
   };
   React.useEffect(() => {
-    try {
          UseTitle('Home');
          fetchProjectData();
          fetchInformationData();
  
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoading(false)
-    }
+   
  
   }, []);
   console.log(data.projects);
