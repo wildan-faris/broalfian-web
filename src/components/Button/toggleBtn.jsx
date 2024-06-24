@@ -28,17 +28,17 @@ const ToggleBtn = () => {
         onClick={() => HandleChangeMode()}
         className=" text-primary "
       >
-        {mode === 'light' ? 
-          <div className="flex flex-row justify-center items-center gap-2">
+        {mode === 'light' ? (
+          <div className="flex flex-row justify-center items-center gap-2 bg-primary rounded-xl px-4 py-1 text-background1">
             <i class="fa-regular fa-sun"></i>
             <p>Light</p>
           </div>
-         : 
-          <div className="flex flex-row justify-center items-center gap-2">
+        ) : (
+          <div className="flex flex-row justify-center items-center gap-2 bg-primary rounded-xl px-4 py-1 text-background1">
             <i class="fa-regular fa-moon"></i>
             <p>Dark</p>
           </div>
-        }
+        )}
       </button>
     );
 }

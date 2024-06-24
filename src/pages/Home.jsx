@@ -15,92 +15,103 @@ import InfiniteStack from "../components/InfiniteStack";
 function Home() {
   const [data, setData] = React.useState({
     information: '',
-    projects: '',
+    projects: [],
   });
   const [isLoading, setIsLoading] = React.useState(true);
 
+  const fetchProjectData = async () => {
+      const response = await AuthApi.get(
+        "/projects"
+      );
+       setData((prevState) => ({
+          ...prevState,
+          projects: response.data.data,
+        }));
+  
+  }
+ 
   const fetchInformationData = async () => {
-    try {
+  
       const response = await AuthApi.get(
         "/information"
       );
-      console.log(response);
         setData((prevState) => ({
           ...prevState,
           information: response.data.data[0],
         }));
-      
+    
+  };
+  React.useEffect(() => {
+    try {
+         UseTitle('Home');
+         fetchProjectData();
+         fetchInformationData();
+ 
     } catch (error) {
       console.log(error);
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
-  };
-  React.useEffect(() => {
-    UseTitle("Home");
-    fetchInformationData();
  
   }, []);
+  console.log(data.projects);
   return (
     <>
       <Navbar />
       <div className=" bg-background1  ">
-        <div className=" container mx-auto">
-          <section className="">
-            <div className=" h-screen flex flex-col">
-              <div className=" flex flex-col flex-grow space-y-3 md:space-y-4 items-center justify-center text-center px-7 md:px-14">
-                {isLoading ? (
-                  <SkeletonHero />
-                ) : (
-                  <Hero
-                    name={data.information?.name}
-                    position={data.information?.position}
-                    country={data.information?.country}
-                    description={data.information?.description_1}
-                    img={data.information?.avatar}
-                  />
-                )}
-              </div>
-            </div>
-          </section>
-          <section>
-            <InfiniteStack />
-          </section>
-          <section className="bg-background2">
-            <div className=" py-10 px-7 md:px-14">
-              <Information
-                name={data.information?.name}
-                position={data.information?.position}
-                done={data.information?.projects_done}
-                years={data.information?.experience}
-                satisfication={data.information?.satisfication}
-                description={data.information?.description_2}
-                subDescription={data.information?.description_3}
-              />
-            </div>
-          </section>
-
-          <section
-            className="bg-background1"
-            id="projects"
-          >
-            <div className=" py-10 px-7 md:px-14 -z-10">
+        <section className=" container mx-auto">
+          <div className=" h-screen flex flex-col">
+            <div className=" flex flex-col flex-grow space-y-3 md:space-y-4 items-center justify-center text-center px-7 md:px-14">
               {isLoading ? (
-                <SkeletonProject />
+                <SkeletonHero />
               ) : (
-                <LookProject
-                  info={data.projects?.data}
-                  img={imgtemplateproject}
+                <Hero
+                  name={data.information?.name}
+                  position={data.information?.position}
+                  country={data.information?.country}
+                  description={data.information?.description_1}
+                  img={data.information?.avatar}
                 />
               )}
             </div>
-          </section>
-          <section className="container mx-auto">
-            <div className=" px-7 md:px-14 ">
-              <Footer />
-            </div>
-          </section>
-        </div>
+          </div>
+        </section>
+        <section>
+          <InfiniteStack />
+        </section>
+        <section className="bg-background2 ">
+          <div className=" py-10 px-7 md:px-14">
+            <Information
+              name={data.information?.name}
+              position={data.information?.position}
+              done={data.information?.projects_done}
+              years={data.information?.experience}
+              satisfication={data.information?.satisfication}
+              description={data.information?.description_2}
+              subDescription={data.information?.description_3}
+            />
+          </div>
+        </section>
+
+        <section
+          className="bg-background1 container mx-auto"
+          id="projects"
+        >
+          <div className=" py-10 px-7 md:px-14 -z-10">
+            {isLoading ? (
+              <SkeletonProject />
+            ) : (
+              <LookProject
+                projects={data.projects}
+              />
+            )}
+          </div>
+        </section>
+        <section className="container mx-auto">
+          <div className=" px-7 md:px-14 ">
+            <Footer />
+          </div>
+        </section>
       </div>
     </>
   );

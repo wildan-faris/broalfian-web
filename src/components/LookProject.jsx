@@ -1,5 +1,6 @@
 import React from 'react';
 import imgtemplateproject from '../assets/img/examimg.jpg';
+import { Link } from 'react-router-dom';
 const imgTemplateArray = [
     {
         imgPath: imgtemplateproject,
@@ -42,14 +43,14 @@ const LookProject = (props) => {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-4">
-          {imgTemplateArray.map((item, index) => (
+          {props.projects?.slice(0,4).map((item, index) => (
             <div
               key={index}
               className="card bg-base-100 shadow-xl image-full transition duration-300 hover:scale-[1.01] "
             >
               <figure>
                 <img
-                  src={props.img}
+                  src={item.featured_img}
                   alt="Shoes"
                   loading="lazy"
                 />
@@ -58,10 +59,10 @@ const LookProject = (props) => {
                 <h2 className="card-title">{item.title}</h2>
                 <p></p>
                 <div className="card-actions justify-end">
-                  <p>{item.subtitle}</p>
-                  <button className="btn btn-sm md:btn-md  btn-primary">
+                  <p>{item.description}</p>
+                  <a href={item?.link || "localhost:3000"}  className="btn btn-sm md:btn-md  btn-primary">
                     View it
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

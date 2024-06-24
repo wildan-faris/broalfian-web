@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
   <>
   
-  <div className="fixed bottom-8 right-16 z-50">
+    <div className="fixed bottom-8 right-8 md:right-16 z-50">
     <ToggleBtn />
   </div>
   <App />
