@@ -60,10 +60,10 @@ const NavbarMobile = () => {
                     className="flex items-center justify-between w-full p-5 rounded-xl"
                     to={route.href}
                   >
-                    <span className="flex gap-1 text-xl font-medium text-primary">
+                    <span className="flex gap-1 text-xl font-medium text-backround1">
                       {route.title}
                     </span>
-                    <span className="text-primary">
+                    <span className="text-backround1">
                       <i className={route.icon}></i>
                     </span>
                   </HashLink>
