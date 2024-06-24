@@ -1,0 +1,88 @@
+{
+  "hash": "f18ac4c4",
+  "configHash": "ab840f2b",
+  "lockfileHash": "d2b56843",
+  "browserHash": "cf5221ba",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "908898ef",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "4aecb345",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "bb879b94",
+      "needsInterop": false
+    },
+    "react-quill": {
+      "src": "../../node_modules/react-quill/lib/index.js",
+      "file": "react-quill.js",
+      "fileHash": "68f2ae70",
+      "needsInterop": true
+    },
+    "quill-image-resize-module-react": {
+      "src": "../../node_modules/quill-image-resize-module-react/image-resize.min.js",
+      "file": "quill-image-resize-module-react.js",
+      "fileHash": "eec7b589",
+      "needsInterop": true
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "bd92865c",
+      "needsInterop": false
+    },
+    "react-router-hash-link": {
+      "src": "../../node_modules/react-router-hash-link/dist/react-router-hash-link.esm.js",
+      "file": "react-router-hash-link.js",
+      "fileHash": "7851b817",
+      "needsInterop": false
+    },
+    "react-slugify": {
+      "src": "../../node_modules/react-slugify/dist/slugify.js",
+      "file": "react-slugify.js",
+      "fileHash": "583bf4d9",
+      "needsInterop": true
+    },
+    "hamburger-react": {
+      "src": "../../node_modules/hamburger-react/dist-esm/index.js",
+      "file": "hamburger-react.js",
+      "fileHash": "389db1bd",
+      "needsInterop": false
+    },
+    "react-use": {
+      "src": "../../node_modules/react-use/esm/index.js",
+      "file": "react-use.js",
+      "fileHash": "655ee933",
+      "needsInterop": false
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "000588f7",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-LEEFVHSY": {
+      "file": "chunk-LEEFVHSY.js"
+    },
+    "chunk-FBRNPY62": {
+      "file": "chunk-FBRNPY62.js"
+    },
+    "chunk-UM3JHGVO": {
+      "file": "chunk-UM3JHGVO.js"
+    },
+    "chunk-CEQRFMJQ": {
+      "file": "chunk-CEQRFMJQ.js"
+    }
+  }
+}
