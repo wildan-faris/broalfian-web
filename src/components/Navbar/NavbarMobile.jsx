@@ -39,7 +39,7 @@ const NavbarMobile = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-0 shadow-4xl right-0 top-[5rem] p-5 pt-0  border-b border-background1/20 "
+            className="fixed left-0 shadow-4xl right-0 top-[5rem] p-5 pt-0 navbar-scroll "
           >
             <ul className="grid gap-2">
               {routes.map((route, idx) => (
@@ -53,14 +53,14 @@ const NavbarMobile = () => {
                     delay: 0.1 + idx / 10,
                   }}
                   key={route.title}
-                  className="w-full p-[0.08rem] rounded-xl z-50"
+                  className="w-full p-[0.08rem]  z-50 border-b  "
                 >
                   <HashLink
                     onClick={() => setOpen((prev) => !prev)}
                     className="flex items-center justify-between w-full p-5 rounded-xl"
                     to={route.href}
                   >
-                    <span className="flex gap-1 text-lg text-primary">
+                    <span className="flex gap-1 text-xl font-medium text-primary">
                       {route.title}
                     </span>
                     <span className="text-primary">

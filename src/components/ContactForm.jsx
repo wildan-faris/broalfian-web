@@ -13,7 +13,8 @@ function ContactForm(props) {
             [name]: value
         })
     }
-    const HandleSubmit= (e) => {
+  const HandleSubmit = (
+    e) => {
         e.preventDefault(); 
 
         axios.post("http://127.0.0.1:8000/api/form", {
@@ -22,7 +23,12 @@ function ContactForm(props) {
             description : form.description
         })
         .then((response)=>console.log(response))
-    
+      alert("Form has been submited");
+          setForm({
+            name: '',
+            email: '',
+            description: '',
+          });
     }
     return (
       <>
@@ -58,7 +64,7 @@ function ContactForm(props) {
                 id="EmailInput"
                 name="email"
                 className="py-4 px-5 rounded-md bg-background1 text-primary border-1"
-                type="text"
+                type="email"
                 placeholder="Enter your e-mail"
                 value={form.email}
                 onChange={HandleChange}
