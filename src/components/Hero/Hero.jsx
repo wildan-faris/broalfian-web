@@ -10,11 +10,11 @@ const Hero = (props) => {
   return (
     <>
       <img
-        className=" w-32 h-32 md:w-48 md:h-48 bg-white rounded-full shadow-md shadow-primary "
+        className=" w-52 h-52 md:w-64 md:h-64 bg-white rounded-full shadow-md shadow-primary "
         alt="Hero-profile-img"
         src={props.img || ExampleImg}
       />
-      <header className="w-10/12 md:w-6/12 ">
+      <header className="w-10/12 md:w-7/12 ">
         <h1 className=" text-lg font-semibold md:text-3xl md:font-bold">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B16CEA] to-[#FF7B5D]">
             Hello, I'm {props.name},

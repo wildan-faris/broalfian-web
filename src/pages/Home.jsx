@@ -74,9 +74,6 @@ function Home() {
             </div>
           </div>
         </section>
-        <section>
-          <InfiniteStack />
-        </section>
         <section className="bg-background2 ">
           <div className=" py-10 px-7 md:px-14">
             <Information
@@ -90,22 +87,24 @@ function Home() {
             />
           </div>
         </section>
+        <section>
+          <InfiniteStack />
+        </section>
 
         <section
-          className="bg-background1 container mx-auto"
+          className="bg-background1 "
           id="projects"
         >
           <div className=" py-10 px-7 md:px-14 -z-10">
             {isLoading ? (
               <SkeletonProject />
             ) : (
-              <LookProject
-                projects={data.projects}
-              />
+              <LookProject projects={data.projects} />
             )}
           </div>
         </section>
-        <section className="container mx-auto">
+
+        <section >
           <div className=" px-7 md:px-14 ">
             <Footer />
           </div>
