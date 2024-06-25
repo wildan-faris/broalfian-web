@@ -38,7 +38,7 @@ const LookProject = (props) => {
                 <h2 className="card-title">{item.title}</h2>
                 <p></p>
                 <div className="card-actions justify-end">
-                  <p>{item.description}</p>
+                  <p className="hidden md:block">{item.description}</p>
                   <a href={item?.link || "localhost:3000"}  className="btn btn-sm md:btn-md  btn-primary">
                     View it
                   </a>

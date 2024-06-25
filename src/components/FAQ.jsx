@@ -45,17 +45,17 @@ function FAQ() {
     {
       question: 'Apa saja keahlian dan keterampilan Anda?',
       answer:
-        'Saya memiliki keahlian dalam [sebutkan keahlian utama, misalnya pengembangan web, desain grafis, analisis data, dsb.]. Saya juga mahir menggunakan berbagai alat dan teknologi seperti [sebutkan alat/teknologi, misalnya HTML, CSS, JavaScript, Photoshop, Python, dsb.].',
+        'Saya memiliki keahlian dalam membuat sebuah website dengan responsive.',
     },
     {
       question: 'Proyek apa saja yang pernah Anda kerjakan?',
       answer:
-        'Saya telah mengerjakan berbagai proyek, mulai dari [sebutkan jenis proyek, misalnya situs web e-commerce, aplikasi mobile, desain logo, dsb.]. Anda dapat melihat detail dan hasil dari beberapa proyek saya di halaman [tautan ke halaman proyek] di website ini.',
+        'Saya telah mengerjakan berbagai proyek, mulai dari task management system dan portofolio',
     },
     {
       question: 'Bagaimana cara menghubungi Anda untuk kolaborasi atau proyek?',
       answer:
-        'Anda dapat menghubungi saya melalui formulir kontak di halaman [tautan ke halaman kontak] atau mengirim email langsung ke [alamat email Anda]. Saya akan merespons secepat mungkin untuk membahas kemungkinan kerja sama atau proyek.',
+        'Anda dapat menghubungi saya melalui formulir kontak di halaman Contact atau mengirim email langsung ke Alfianr792@gmail.com. Saya akan merespons secepat mungkin untuk membahas kemungkinan kerja sama atau proyek.',
     },
     {
       question: 'Apakah Anda bersedia bekerja secara freelance atau full-time?',
@@ -65,7 +65,7 @@ function FAQ() {
     {
       question: 'Di mana saya bisa menemukan portofolio lengkap Anda?',
       answer:
-        'Anda dapat melihat portofolio lengkap saya di halaman [tautan ke halaman portofolio] di website ini. Di sana, saya menampilkan proyek-proyek terbaru saya beserta deskripsi dan hasil yang telah dicapai.',
+        'Anda dapat melihat portofolio lengkap saya di halaman home di website ini. Di sana, saya menampilkan proyek-proyek terbaru saya beserta deskripsi dan hasil yang telah dicapai.',
     },
   ];
 
