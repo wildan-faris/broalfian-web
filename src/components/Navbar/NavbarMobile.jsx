@@ -39,7 +39,7 @@ const NavbarMobile = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-0 shadow-4xl right-0 top-[5rem] p-5 pt-0 navbar-scroll "
+            className="fixed left-0 shadow-4xl right-0 top-[5rem] p-5 pt-0  border-b bg-primary border-background1/20 "
           >
             <ul className="grid gap-2">
               {routes.map((route, idx) => (
@@ -60,10 +60,10 @@ const NavbarMobile = () => {
                     className="flex items-center justify-between w-full p-5 rounded-xl"
                     to={route.href}
                   >
-                    <span className="flex gap-1 text-xl font-medium text-primary">
+                    <span className="flex gap-1 text-xl font-medium text-background1">
                       {route.title}
                     </span>
-                    <span className="text-primary">
+                    <span className="text-background1">
                       <i className={route.icon}></i>
                     </span>
                   </HashLink>
